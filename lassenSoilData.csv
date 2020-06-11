@@ -1,0 +1,38 @@
+soilSeries,soilTaxonomy,top,bottom,miid,Hzn,clay_pct,sand_pct,om_pct,ph,CEC,bulkDensity,NaF,baseSat,glass_pct,p_retention,Al_half_Fe
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",0,3,2,Oi,,,,,,,,,,,
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",3,7,5,A,3,67.3,8,5.5,17.2,1,9.2,,20,30,0.5
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",7,18,13,2Ab,4,66.5,4,6,8.7,0.9,11.5,,25,85,1.8
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",18,49,34,2Bwb1,5,64.3,3,6.3,7.4,0.9,11.7,,25,95,1.8
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",49,62,56,2Bwb2,6,63.5,2,6.3,6.1,0.9,11.4,,25,95,1.8
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",62,95,79,2Bqb,3,67.3,1,6.3,2.4,0.9,11.4,,25,95,1.8
+Terracelake,"Ashy-skeletal, amorphic Xeric Vitricryands",95,120,108,2R,,,,,,,,,,,
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",0,3,2,A1,1,67.8,7,5.5,13.6,1.1,9,,20,30,0.5
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",3,12,8,A2,2.4,80.5,6.9,6,15.2,1.1,10,,20,30,0.5
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",12,35,24,A3,2.9,84,4.5,6.5,12.9,0.95,10.9,,30,50,0.5
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",35,64,50,Bw1,2.4,82.6,4.5,6.7,13.7,0.95,11.2,,25,85,1.8
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",64,90,77,Bw2,3.2,80.7,3.4,6.8,11.6,0.95,11,,25,85,1.8
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",90,129,110,Bw3,2.8,83.4,2.8,6.8,7.5,0.9,11.1,,25,90,1.8
+Emeraldlake,"Ashy-skeletal, amorphic, nonacid Vitrandic Cryorthents",129,152,141,Bw4,1.1,77.2,3.7,6.8,8.1,0.9,11.3,,25,90,1.8
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",0,2,1,Oi,,,80,,,,,,,,
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",2,56,29,A,5,65.6,10,6,24.1,1,9.5,,40,55,0.71
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",56,16,36,Bw1,5,65.6,8,6.5,18.9,0.9,11.5,,45,90,2.5
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",16,32,24,Bw2,6,65,6,6.3,14.8,0.9,11.5,,45,90,2.5
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",32,58,45,Bw3,5,65.6,4,6.7,9.5,0.9,11.5,,45,90,2.5
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",58,104,81,Bq,5,65.4,1,7.2,3.6,0.9,11.3,,30,55,1.5
+Shadowlake,"Ashy-skeletal, glassy Xeric Vitricryands",104,129,117,Cdq,12,43.8,0.1,6.5,5.2,1.2,11.2,,30,35,0.7
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",0,2,1,Oi,,,55.56,,,,,,,,
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",2,9,6,A1,2.8,69.7,16.82,5.9,29.3,0.66,11.1,18.5,14,95,2.75
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",9,25,17,A2,2.5,71,13.5,6.3,22.3,0.69,11.3,18.5,14,95,2.75
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",25,54,40,AB,2.8,63.6,10.65,6.4,20.3,0.67,11.3,6,13,100,4
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",54,76,65,Bw1,3.3,61.4,9.7,6.3,22.4,0.73,11.3,3.5,21,100,5.5
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",76,119,98,Bw2,3.7,57.1,5.92,6.3,23.4,0.75,11.3,3.5,21,100,5.5
+Juniperlake,"Medial-skeletal, amorphic, frigid Humic Haploxerands",119,142,131,Cdq,3.7,69.9,1.84,6.3,12.3,1.4,11.1,3,10,100,3.65
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",0,1,1,Oi,,,88.25,,,,,,,,
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",1,8,5,A,0,92.1,3.03,5.9,5.6,0.9,8.2,62.5,18,6,0.15
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",8,27,18,C1,0,95.5,0.34,6.5,0.6,0.9,9.1,66.5,65,10,0.25
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",27,33,30,C2,0,94.9,0.21,6.7,0.4,0.9,9.3,66.5,65,10,0.25
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",33,49,41,2Ab,2.6,74.3,6.47,6.7,15.4,0.9,10.8,50.5,29,90,2.9
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",49,79,64,2Bwb1,2.6,65.9,5.11,6.7,14.2,0.92,11,30.5,14,100,3.75
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",79,102,91,2Bwb2,2,64.5,3.46,7,12.6,0.95,10.9,30.5,14,100,3.75
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",102,125,114,2Cdqb1,0.7,76.7,0.31,6.9,4.8,1.3,10.4,24,,60,1.6
+Buttelake,"Ashy over medial-skeletal, glassy over amorphic, frigid Humic Vitrixerands",125,160,143,2Cdqb2,1.7,57.5,0.52,6.7,5,1.4,10.4,24,,,1.6

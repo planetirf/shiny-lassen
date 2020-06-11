@@ -1,0 +1,138 @@
+---
+title: "LASSENTEST"
+author: "Irfan Ainuddin"
+date: "7/19/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+## Import SoilDB
+```{r}
+library(aqp)
+library(soilDB)
+library(plyr)
+library(sharpshootR)
+library(knitr)
+library(dplyr)
+```
+
+```{r}
+# compute total component percentages for the current block of components
+f.sum <- function(i) {
+   n <- nrow(i) # number of rows
+   s <- sum(i$comppct_r) # total component percent
+   return(data.frame(pct=s, n=n)) # return the results
+}
+
+# pick the largest suborder from within each map unit
+f.largest <- function(i) {
+   i.sorted <- i[order(i$pct, decreasing=TRUE), ] # sort largest -> smallest
+   top.suborder <- i.sorted$taxsuborder[1] # get the largest suborder
+   top.suborder.pct <- i.sorted$pct[1] # get the the corresponding component percent
+   return(data.frame(suborder=top.suborder, pct=top.suborder.pct)) # return results
+}
+```
+## test code 
+
+```{r}
+
+# get map unit-level data
+q.1 <- "SELECT mukey, muacres
+FROM legend
+INNER JOIN mapunit ON mapunit.lkey = legend.lkey
+WHERE legend.areasymbol = 'CA789'"
+
+# get component-level data
+q.2 <- "SELECT 
+component.mukey, cokey, comppct_r, compname, taxclname, taxorder, taxsuborder, taxgrtgroup, taxsubgrp
+FROM legend
+INNER JOIN mapunit ON mapunit.lkey = legend.lkey
+LEFT OUTER JOIN component ON component.mukey = mapunit.mukey
+WHERE legend.areasymbol = 'CA789'"
+
+# submit queries
+mu <- SDA_query(q.1)
+co <- SDA_query(q.2)
+
+# tabulate percentage of suborder-level taxa within each map unit (mukey)
+l <- comp.suborder.sums <- ddply(co, .(mukey, taxsuborder), f.sum, .progress='text')
+
+# keep the largest suborder, and its associated total percentage
+comp.suborder <- ddply(l, .(mukey), f.largest, .progress='text')
+
+# join the largest suborder (by map unit) to mu
+x <- join(mu, comp.suborder, by='mukey')
+
+# get an effective map unit area via: muacres * pct/100
+x$effective.area <- with(x, muacres * pct / 100)
+
+
+
+
+```
+
+```{r cars}
+sort(round(tapply(x$effective.area, x$suborder, sum)))
+
+co %>% group_by(compname) %>% 
+         summarise( 
+                   n=n()) %>% 
+         kable()
+```
+
+```{r pressure, echo=FALSE}
+sl.list <- c('terracelake', 'emeraldlake', 'shadowlake', 'buttelake', 'juniperlake')
+
+# fetch and convert data into an SPC
+ls4 <- fetchOSD(sl.list)
+kssl.1 <- fetchKSSL('terracelake')
+kssl.2 <- fetchKSSL('emeraldlake')
+kssl.3 <- fetchKSSL('shadowlake')
+kssl.4 <- fetchKSSL('buttelake')
+kssl.5 <- fetchKSSL('juniperlake')
+```
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+par(mar=c(4,3,2,2))
+plot(ls4, name='name')
+
+```
+
+
+```{r pressure, echo=FALSE}
+par(mar=c(4,3,2,2))
+plot(ls4, name='name', )
+
+```
+
+
+```{r}
+ls4$soil.depth <- profileApply(ls4, estimateSoilDepth, name='hzname', top='top', bottom='bottom')
+par(mar=c(0,0,0,0))
+plot(ls4, name='hzname', plot.order=order(ls4$soil.depth), cex.names=0.85, axis.line.offset=-5)
+
+
+SoilTaxonomyDendrogram(ls4, name='hzname', cex.names=0.85, axis.line.offset=-5)
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
