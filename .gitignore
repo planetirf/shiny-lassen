@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+data/NCSS_Characterization_Database_newSchema_20200114.sqlite
+data/LDM-compact.sqlite

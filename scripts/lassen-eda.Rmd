@@ -1,0 +1,37 @@
+---
+title: "lassen-eda"
+author: "Irfan Ainuddin"
+date: "6/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(DBI)
+library(RSQLite)
+
+```
+
+```{r}
+## connec to sqlite db
+
+#db <- dbConnect(RSQLite::SQLite(), './NCSS_Characterization_Database_newSchema_20200114.sqlite')
+db <- dbConnect(RSQLite::SQLite(), './data/LDM-compact.sqlite')
+
+```
+
+```{r}
+# list tables
+dbListTables(db)
+```
+
+```{r}
+dbListFields(db,'nasis_ncss')
+dbListFields(db,'nasis_pedon')
+```
+
+
+

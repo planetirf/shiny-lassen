@@ -14,33 +14,16 @@ sidebar <- dashboardSidebar(sidebarMenu(
 
 
 ## BODY
-body <- dashboardBody( tabItems(
+body <- dashboardBody( 
+  img(src=df$box_img[1], width = "200"),
+  
+  ## Tabbed items
+  tabItems(
   # First tab content
-  tabItem(tabName = "dashboard",
-          fluidRow(
-            box(plotOutput("plot1", height = 250)),
-            
-            box(
-              title = "Controls",
-              sliderInput("slider", "Number of observations:", 1, 100, 50)
-            )
-          )
-  ),
+  tabItem(tabName = "dashboard"),
   
   # Second tab content
-  tabItem(tabName = "widgets",
-          h2("Widgets tab content"),
-          ## First Row
-          fluidRow(
-            box(title = "row 1 box")
-          ),
-          ## Second Row
-          fluidRow(
-            box(title = "row 2 box"),
-            box(title = "row 2 box2"),
-            box(title = "row 2 box3")
-          )
-  )
+  tabItem(tabName = "widgets")
 ))
 
 
@@ -50,16 +33,11 @@ ui <- dashboardPage(header,sidebar,body)
 
 
 ## BUILD SERVER FUNCTION
-server <- function(input, output) {
-  set.seed(122)
-  histdata <- rnorm(500)
+server <- function(input, output, session) {
   
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
-  })
 }
 
+# Run the application 
+shinyApp(ui = ui, server = server)
 
-## START APP
-shinyApp(ui, server)
+

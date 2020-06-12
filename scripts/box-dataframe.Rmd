@@ -1,0 +1,54 @@
+---
+title: "box-dataframe"
+author: "Irfan Ainuddin"
+date: "6/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+box_num <- c(100:399,900:903)
+box_id <- c(789100:789399,789900:789903)
+```
+
+
+```{r}
+## create soil box URL
+box_img <- paste('http://planetirf.org/img/boxphotos_loRes/781_', box_num, '.jpg', sep="")
+
+## create soil pit URL
+pit_img <- paste('http://planetirf.org/img/pits/789', box_num, '_1.jpg', sep="")
+
+## create landscape photo URL - North
+north_img <- paste('http://planetirf.org/img/cardinals/789', box_num, '_N.jpg', sep="")
+
+## create landscape photo URL - East
+east_img <- paste('http://planetirf.org/img/cardinals/789', box_num, '_E.jpg', sep="")
+
+## create landscape photo URL - South
+south_img <- paste('http://planetirf.org/img/cardinals/789', box_num, '_S.jpg', sep="")
+
+## create landscape photo URL - West
+west_img <- paste('http://planetirf.org/img/cardinals/789', box_num, '_W.jpg', sep="")
+
+
+
+
+
+df <- data.frame(box_id, box_img, pit_img, north_img, east_img, south_img, west_img)
+
+```
+
+
+![photobox](http://planetirf.org/img/boxphotos_loRes/781_100.jpg)
+
+
+```{r}
+
+saveRDS(df, "lassen-box-img.rds")
+```
+
+
