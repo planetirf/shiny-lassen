@@ -22,7 +22,7 @@ body <- dashboardBody(
   # First tab content
   tabItem(tabName = "dashboard",
           fluidRow(
-            box(uiOutput("boxImg")),
+            box(uiOutput("boxImg", width=2)),
             box(uiOutput("pitImg")),
 
           ),

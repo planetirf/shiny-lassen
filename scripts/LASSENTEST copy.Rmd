@@ -49,15 +49,26 @@ WHERE legend.areasymbol = 'CA789'"
 
 # get component-level data
 q.2 <- "SELECT 
-component.mukey, cokey, comppct_r, compname, taxclname, taxorder, taxsuborder, taxgrtgroup, taxsubgrp
+component.mukey, cokey, comppct_r, compname, taxclname, taxorder, taxsuborder, taxgrtgroup, taxsubgrp, muname, component.chkey
 FROM legend
 INNER JOIN mapunit ON mapunit.lkey = legend.lkey
 LEFT OUTER JOIN component ON component.mukey = mapunit.mukey
 WHERE legend.areasymbol = 'CA789'"
 
+
 # submit queries
 mu <- SDA_query(q.1)
 co <- SDA_query(q.2)
+
+# test query
+
+# get map unit-level data
+q.3 <- "SELECT *
+FROM legend
+INNER JOIN mapunit ON mapunit.lkey = legend.lkey
+WHERE legend.areasymbol = 'CA789'"
+
+t <- SDA_query(q.3)
 
 # tabulate percentage of suborder-level taxa within each map unit (mukey)
 l <- comp.suborder.sums <- ddply(co, .(mukey, taxsuborder), f.sum, .progress='text')
