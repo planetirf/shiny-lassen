@@ -138,6 +138,8 @@ plot(ls4, name='hzname', plot.order=order(ls4$soil.depth), cex.names=0.85, axis.
 SoilTaxonomyDendrogram(ls4, name='hzname', cex.names=0.85, axis.line.offset=-5)
 
 
+
+
 ```
 
 

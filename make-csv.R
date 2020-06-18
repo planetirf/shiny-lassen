@@ -1,5 +1,5 @@
 box_num <- rep(100:399, each=12)
-pit_id <- paste("789",x,sep="")
+pit_id <- paste("789",box_num,sep="")
 
 hzn_seq <- c(1:12)
 
@@ -157,3 +157,6 @@ columnNames <- c(## SITE PROPERTIES
 df <- data.frame("area"=789,pit_id,box_num,hzn_seq)
 
 df[,columnNames] <- NA
+
+library(xlsx)
+write.xlsx2(df, file = "lassen-boxfile-start.xlsx", sheet='data')
